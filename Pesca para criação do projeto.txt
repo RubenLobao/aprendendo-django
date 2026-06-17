@@ -1,0 +1,28 @@
+#Instale o python em sua máquina.
+#Crie o diretório base do seu projeto.
+#Instale o Django no ambiente virtual dentro do projeto.
+	-> python -m venv venv
+	-> .\venv\Scripts\activate
+	-> pip install django
+#Inicie o projeto dentro do diretório base.
+	-> django-admin startproject app .
+#Inicie o servidor django.
+	-> python manage.py runserver
+#Criando o primeiro app Django
+	->python manage.py startapp "nome do app"
+
+OBS Importantes acerca de alguns arquivos que o Django cria:
+	- models.py é o arquivo onde iremos montar nossas tabelas de banco de dados.
+	- views.py é o arquivo onde iremos montar a nossa lógica por trás das cortinas.
+	- admin.py é o arquivo onde iremos controlar cada parte do projeto. (Somente os super usuários terão acesso) Aqui é onde teremos nossos CRUDs, por exemplo.
+	- tests.py é o arquivo onde iremos montar nossos testes do projeto, iremos validaremos cada passo realizado.
+
+Comandos de gerenciamento do projeto (mais usados): python manage.py (makemigrations: Realiza o escopo dos bancos de dados criados) (migrate: Analisa todos os arquivos e cria o banco de dados conforme dados informados no projeto)
+Resumo: Sempre que houver alteração no código onde mexa em alguma tabela é necessário primeiro roda o makemigrations para que ele gere os scripts necessários para alterar as tabelas e depois o migrate para que ele acione os scripts e de fato faça a alteração no banco de dados.
+
+#instale no VS Code o SQLite Viewer.
+
+#Para que o administrador consiga visualizar as tabelas criadas precisa que seja configurado no arquivo admin.py
+
+
+
