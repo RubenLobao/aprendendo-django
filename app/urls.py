@@ -34,6 +34,7 @@ urlpatterns = [
     path('car/<int:pk>/delete', CarDeleteView.as_view(), name='car_delete'),
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
+    path('', CarsListView.as_view(), name='home'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
