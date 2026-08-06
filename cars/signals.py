@@ -2,6 +2,7 @@ from django.db.models.signals import post_save, post_delete, pre_save
 from django.dispatch import receiver
 from cars.models import Car, CarInventory
 from django.db.models import Sum
+#from openai_api.client import get_car_ai_bio -- Caso queira usar a API do OpenAI para gerar a biografia, descomente esta linha.
 
 
 def car_inventory_update():
@@ -17,7 +18,10 @@ def car_inventory_update():
 
 @receiver(pre_save, sender='cars.Car')
 def car_pre_save(sender, instance, **kwargs):
-    ...
+    if not instance.bio:
+        instance.bio = "Nenhuma biografia disponível."
+        #instance.bio = get_car_ai_bio(instance.model, instance.brand, instance.year)
+        #  -- Caso queira usar a API do OpenAI para gerar a biografia, descomente esta linha e comente a linha acima.    
 
 @receiver(post_save, sender='cars.Car')
 def car_post_save(sender, instance, created, **kwargs):
