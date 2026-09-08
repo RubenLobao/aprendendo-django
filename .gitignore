@@ -1,0 +1,17 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# SQLite
+db.sqlite3
+db.sqlite3-journal
+*.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Environment variables
+.env
