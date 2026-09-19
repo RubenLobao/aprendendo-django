@@ -15,3 +15,6 @@ __pycache__/
 
 # Environment variables
 .env
+
+#key.pem
+aprendendo-django-key.pem
