@@ -24,5 +24,11 @@ Resumo: Sempre que houver alteração no código onde mexa em alguma tabela é n
 
 #Para que o administrador consiga visualizar as tabelas criadas precisa que seja configurado no arquivo admin.py
 
+#Criando chave SSH para o repositório no GitHub
+	-> ssh-keygen -t ed25519 -C "rubenlobao18@gmail.com" Daí é só dar enter em tudo caso não queira colocar senha, normalmente não é necessário
+	-> eval "$(ssh-agent -s)" para dar permissão ao agente ssh do pc.
+	-> ssh-add /root/.ssh/id_ed25519 para adicionar a chave que foi gerada ao agente
+	
+
 
 
