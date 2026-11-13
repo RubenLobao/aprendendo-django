@@ -69,6 +69,16 @@
       background-color: #d2221c;
     }
 
+    .car-photo-placeholder {
+      align-items: center;
+      background-color: #c7c7c7;
+      color: #555;
+      display: flex;
+      font-size: 18px;
+      height: 200px;
+      justify-content: center;
+    }
+
     .error-message {
       color: #d9534f;
       font-size: 14px;
@@ -80,7 +90,11 @@
     }
   </style>
   <div class="car-card">
+      {% if object.photo %}
       <img src="{{ object.photo.url }}" alt="{{ object.model }} - {{ object.brand }}">
+    {% else %}
+      <div class="car-photo-placeholder">Sem foto</div>
+    {% endif %}
       <h2>{{ object.brand }} {{ object.model }}</h2>
       <p><strong>Ano de fabricação:</strong> {{ object.factory_year }}</p>
       <p><strong>Ano do modelo:</strong> {{ object.model_year }}</p>
